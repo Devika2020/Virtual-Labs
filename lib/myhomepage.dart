@@ -18,12 +18,15 @@ class MyHomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  GestureDetector(
-                    child: Icon(
+                  IconButton(
+                    icon: Icon(
                       Icons.sort,
                       color: Colors.black,
                       size: 40,
                     ),
+                    onPressed: (){
+                      print('Drawer pulled');
+                    },
                   ),
                   Container(
                     padding: EdgeInsets.only(
@@ -89,63 +92,54 @@ class MyHomePage extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.035,
                 ),
                 GestureDetector(
-                  onTap: () {
-                    print('hellooo');
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    height: 35,
-                    decoration: BoxDecoration(
-                      color: Colors.lightBlue[100],
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15),
+                onTap: () {
+                  print('hellooo');
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: 35,
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlue[100],
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15),
+                      bottomLeft: Radius.circular(15),
+                      bottomRight: Radius.circular(15),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromRGBO(0, 0, 0, 0.25),
+                          offset: Offset(0, 4),
+                          blurRadius: 4)
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'GET STARTED  ',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: Color.fromRGBO(0, 0, 0, 1),
+                          fontFamily: 'RedHatDisplay',
+                          fontSize: 15,
+                          letterSpacing:
+                              0 /*percentages not used in flutter. defaulting to zero*/,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Color.fromRGBO(0, 0, 0, 0.25),
-                            offset: Offset(0, 4),
-                            blurRadius: 4)
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'GET STARTED  ',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Color.fromRGBO(0, 0, 0, 1),
-                            fontFamily: 'RedHatDisplay',
-                            fontSize: 15,
-                            letterSpacing:
-                                0 /*percentages not used in flutter. defaulting to zero*/,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SvgPicture.asset(
-                          'assets/images/vector4.svg',
-                        ),
-                      ],
-                    ),
+                      SvgPicture.asset(
+                        'assets/images/vector4.svg',
+                      ),
+                    ],
                   ),
                 ),
+                  ),
               ],
             ),
           ],
         ),
       ),
-      //   appBar: AppBar(
-      //     backgroundColor: Colors.white,
-      //     leading:GestureDetector(child: Icon(Icons.sort,color:Colors.black,size: 40,)
-      //   ),
-      //   actions: <Widget>[
-      //      Container(height:40,width:40,child: Image.asset('assets/images/Rectangle4.png',fit: BoxFit.contain,),),
-      //   ],
-      //   //body: ,
-      // ),
     );
   }
 }

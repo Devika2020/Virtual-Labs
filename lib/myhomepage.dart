@@ -12,8 +12,7 @@ class MyHomePage extends StatelessWidget {
             Container(
               //  key: ,
               width: double.infinity,
-              height: (MediaQuery.of(context).size.height -
-                      MediaQuery.of(context).padding.top) *
+              height: (MediaQuery.of(context).size.height) *
                   0.07,
               color: Colors.white,
               child: Row(

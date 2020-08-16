@@ -1,3 +1,4 @@
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -7,10 +8,9 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             Container(
-              //  key: ,
               width: double.infinity,
               height: (MediaQuery.of(context).size.height) *
                   0.07,
@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
                     height: 50,
                     width: 50,
                     child: Image.asset(
-                      'assets/images/Rectangle4.png',
+                      'assets/images/logo.png',
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -49,10 +49,14 @@ class MyHomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  child: Image(
-                      image: AssetImage('assets/images/Rectangle14.png'),
-                      fit: BoxFit.fitWidth),
+                  height: 200,
+                  width: MediaQuery.of(context).size.width*0.8,
+                  child: FlareActor(
+                    'assets/flare_files/Lab Final.flr',
+                    animation: 'lab',
+                    alignment: Alignment.center,
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
                 SizedBox(
                   height: 5,

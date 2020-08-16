@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallabs2/myhomepage.dart';
+import 'package:virtuallabs2/homepage.dart';
 
 void main() {
   runApp(MyApp());

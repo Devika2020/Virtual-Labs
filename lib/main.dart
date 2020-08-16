@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallabs2/homepage.dart';
+import 'package:virtuallabs2/screens/homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,4 +32,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

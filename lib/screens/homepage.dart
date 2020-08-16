@@ -12,8 +12,7 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             Container(
               width: double.infinity,
-              height: (MediaQuery.of(context).size.height) *
-                  0.07,
+              height: (MediaQuery.of(context).size.height) * 0.07,
               color: Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,7 +23,7 @@ class MyHomePage extends StatelessWidget {
                       color: Colors.black,
                       size: 40,
                     ),
-                    onPressed: (){
+                    onPressed: () {
                       print('Drawer pulled');
                     },
                   ),
@@ -50,7 +49,7 @@ class MyHomePage extends StatelessWidget {
               children: <Widget>[
                 Container(
                   height: 200,
-                  width: MediaQuery.of(context).size.width*0.8,
+                  width: MediaQuery.of(context).size.width * 0.8,
                   child: FlareActor(
                     'assets/flare_files/Lab Final.flr',
                     animation: 'lab',
@@ -95,50 +94,51 @@ class MyHomePage extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.035,
                 ),
-                GestureDetector(
-                onTap: () {
-                  print('hellooo');
-                },
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  height: 35,
-                  decoration: BoxDecoration(
-                    color: Colors.lightBlue[100],
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
-                      bottomLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
+                InkWell(
+                  splashColor: Colors.lightBlue,
+                  onTap: () {
+                    print("lol");
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    height: 35,
+                    decoration: BoxDecoration(
+                      color: Colors.lightBlue[100],
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color.fromRGBO(0, 0, 0, 0.25),
+                            offset: Offset(0, 4),
+                            blurRadius: 4)
+                      ],
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Color.fromRGBO(0, 0, 0, 0.25),
-                          offset: Offset(0, 4),
-                          blurRadius: 4)
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'GET STARTED  ',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Color.fromRGBO(0, 0, 0, 1),
-                          fontFamily: 'RedHatDisplay',
-                          fontSize: 15,
-                          letterSpacing:
-                              0 /*percentages not used in flutter. defaulting to zero*/,
-                          fontWeight: FontWeight.w600,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'GET STARTED  ',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontFamily: 'RedHatDisplay',
+                            fontSize: 15,
+                            letterSpacing:
+                                0 /*percentages not used in flutter. defaulting to zero*/,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      SvgPicture.asset(
-                        'assets/images/vector4.svg',
-                      ),
-                    ],
+                        SvgPicture.asset(
+                          'assets/images/vector4.svg',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                  ),
               ],
             ),
           ],
